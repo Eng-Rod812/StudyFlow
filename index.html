@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow | Organizador académico</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <main class="contenedor">
+    <header>
+      <h1>StudyFlow</h1>
+      <p>Organiza tus tareas y alcanza tus metas.</p>
+    </header>
+
+    <section aria-labelledby="titulo-tareas">
+      <h2 id="titulo-tareas">Mis tareas</h2>
+
+      <form id="formulario-tarea">
+        <label for="nueva-tarea">Nueva tarea</label>
+
+        <input
+          type="text"
+          id="nueva-tarea"
+          placeholder="Ej. Estudiar JavaScript"
+          required
+        >
+
+        <button type="submit">Agregar tarea</button>
+      </form>
+
+      <p id="mensaje" role="status" aria-live="polite"></p>
+
+      <ul id="lista-tareas"></ul>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+
+/* ===================================
+   STUDYFLOW - ESTILOS GENERALES
+=================================== */
+
+:root {
+  --fondo: #f4f7fb;
+  --blanco: #ffffff;
+  --principal: #3449a5;
+  --principal-hover: #263985;
+  --texto: #202c43;
+  --secundario: #526178;
+  --borde: #d6deec;
+  --completada: #e8f6ef;
+  --peligro: #a82e3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ENCABEZADO */
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 6vw, 3.5rem);
+  color: var(--principal);
+  margin-bottom: 8px;
+}
+
+header p {
+  color: var(--secundario);
+  margin-top: 0;
+}
+
+/* TARJETA PRINCIPAL */
+
+section {
+  background: var(--blanco);
+  padding: 32px;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(32, 44, 67, 0.07);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+/* FORMULARIO */
+
+#formulario-tarea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+#formulario-tarea label {
+  font-weight: 600;
+}
+
+#nueva-tarea {
+  flex: 1;
+  min-width: 180px;
+  padding: 13px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  font: inherit;
+}
+
+button {
+  padding: 10px 15px;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  background: var(--blanco);
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #edf1f9;
+}
+
+#formulario-tarea button {
+  background: var(--principal);
+  border-color: var(--principal);
+  color: white;
+  font-weight: 600;
+}
+
+#formulario-tarea button:hover {
+  background: var(--principal-hover);
+}
+
+/* LISTA DE TAREAS */
+
+#lista-tareas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#lista-tareas li {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #f8faff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+#lista-tareas input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--principal);
+  cursor: pointer;
+}
+
+#lista-tareas span {
+  flex: 1;
+  min-width: 120px;
+  overflow-wrap: anywhere;
+}
+
+/* BOTONES DE LAS TAREAS */
+
+#lista-tareas button:last-of-type {
+  color: var(--peligro);
+  border-color: #eac3c8;
+}
+
+#lista-tareas button:last-of-type:hover {
+  background: #fff0f1;
+}
+
+/* ACCESIBILIDAD */
+
+:focus-visible {
+  outline: 3px solid #3449a5;
+  outline-offset: 3px;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  #formulario-tarea {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #nueva-tarea {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #lista-tareas li {
+    gap: 10px;
+  }
+
+  #lista-tareas span {
+    flex-basis: calc(100% - 35px);
+  }
+
+  #lista-tareas button {
+    flex: 1;
+  }
+}
